@@ -9,3 +9,4 @@ bot pa la bb
 
 
 this is gift for nssj
+[libreria para el bot] (https://pypi.org/project/pyTelegramBotAPI/)
