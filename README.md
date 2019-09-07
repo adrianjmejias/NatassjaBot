@@ -5,3 +5,6 @@ bot pa la bb
 
 1. run the get-pip.py script
 2. run pip install pyTelegramBotAPI
+
+
+[libreria para el bot] (https://pypi.org/project/pyTelegramBotAPI/)
