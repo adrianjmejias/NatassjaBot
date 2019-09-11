@@ -38,7 +38,6 @@ class Node:
 
         # Si el nodo es hoja 
         if not self.transitions:
-            print('hoja' + str(self.actions))
             return None
 
         res = input(self.question)
@@ -48,8 +47,7 @@ class Node:
             print('checking ' + tt.answer)
 
             if(tt.condition(res)):
-                print('it is '+ tt.answer) 
-                print(tt.node_to_go) 
+                print('it is '+ tt.answer)
                 return tt.node_to_go
 
         return self
