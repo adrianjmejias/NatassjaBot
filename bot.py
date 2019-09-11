@@ -18,27 +18,22 @@ def FefiVocal(a):
         return 'i'
     return a
 
-@bot.message_handler(commands=['dictator'])
-def route_fefify(message):
-    print(message)
-    print(message.chat.username)
+@bot.message_handler(commands=['start'])
+def start(message):
+    # print(message)
+    # print(message.chat.username)
 
-    fefiedMsg = message.text
-
-    fefiedMsg = fefiedMsg.split(' ')
-
-    fefiedMsg.pop(0)
-
-    fefiedMsg = ' '.join(fefiedMsg)
-    print(fefiedMsg)
-    
-    fefiedMsg = ''.join([FefiVocal(x) for x in fefiedMsg])
-    print(fefiedMsg)
-    bot.reply_to(message,fefiedMsg)
+    # TODO: SET WELCOME MESSAGE
+    msg =   "WELCOME MESSÁGE"
+    bot.reply_to(message,msg)
     pass
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
+
+
+
+    # act_node = act_node.visit()
 	bot.reply_to(message, message.text)
 
 print("bot listening")
