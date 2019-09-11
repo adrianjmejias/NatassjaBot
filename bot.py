@@ -1,6 +1,6 @@
 
 # https://github.com/eternnoir/pyTelegramBotAPI
-
+from main import act_node
 import telebot
 
 token = "876288218:AAGwZhJQw38ppbnsZxG5Ik7gSM6_Buf4HHU"
@@ -33,7 +33,7 @@ def echo_all(message):
 
 
 
-    # act_node = act_node.visit()
+    act_node = act_node.visit()
 	bot.reply_to(message, message.text)
 
 print("bot listening")
