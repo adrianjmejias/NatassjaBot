@@ -2,21 +2,9 @@
 # https://github.com/eternnoir/pyTelegramBotAPI
 from main import act_node
 import telebot
-
 token = "876288218:AAGwZhJQw38ppbnsZxG5Ik7gSM6_Buf4HHU"
-
 bot = telebot.TeleBot(token)
 
-def FefiVocal(a):
-    if(a == 'a'): 
-        return 'i'
-    if(a == 'e'): 
-        return 'i'
-    if(a == 'o'): 
-        return 'i'
-    if(a == 'u'): 
-        return 'i'
-    return a
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -34,7 +22,7 @@ def echo_all(message):
 
 
     act_node = act_node.visit()
-	bot.reply_to(message, message.text)
+    bot.reply_to(message, message.text)
 
 print("bot listening")
 bot.polling()
