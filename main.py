@@ -13,5 +13,7 @@ act_node =  Node(
     ])
 
 
-while act_node:
-    act_node = act_node.visit()
+if __name__ == "__main__":
+    while act_node:
+        act_node = act_node.visit()
+    pass
