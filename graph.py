@@ -16,8 +16,6 @@ class Transition:
 
         
     pass
-
-
 class Node:
     def __init__ (self, question, transitions, actions):
         self.question = question
@@ -28,18 +26,19 @@ class Node:
     def leaf (cls, actions):
         return cls(None, None, actions)
 
-    def act(self):
+    def act(self, bot):
         for action in self.actions:
-            action()
+            action(bot)
 
-    def visit(self):
+    def visit(self, bot, message):
 
-        self.act()
+        self.act(bot)
 
         # Si el nodo es hoja 
         if not self.transitions:
             return None
 
+        bot.send_message()
         res = input(self.question)
 
         # Si el nodo es interno
