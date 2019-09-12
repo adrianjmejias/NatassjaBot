@@ -30,7 +30,7 @@ class Node:
         for action in self.actions:
             action(bot)
 
-    def visit(self, bot, message):
+    def visit(self, bot):
 
         self.act(bot)
 
