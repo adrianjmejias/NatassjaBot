@@ -27,6 +27,9 @@ def echo_all(message):
     # bot.forward_message(id_adri,message.from_user.id, message.text)
     bot.reply_to(message, message.text)
 
+#id_adri = 392991435
+id_alosa = 388964408
+
 # bot.send_photo(id_alosa, open('./doggy.jpg', 'rb'), 'tiene un sombrerito mrc')
 
 

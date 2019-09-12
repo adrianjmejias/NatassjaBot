@@ -7,13 +7,13 @@ from config import id_test
 
 
 act_node =  Node(
-    'Estas feliz o triste?', 
+    '¿Estás feliz o triste?', 
     [
-        Transition.simple('feliz', Node.leaf([lambda bot:  bot.send_message(id_test, 'feliz')])),
-        Transition.simple('triste', Node.leaf([lambda bot:  bot.send_message(id_test, 'triste')]))
+        Transition.simple('feliz', Node.leaf([lambda bot:  bot.send_message(id_test, 'https://www.youtube.com/watch?v=xdhoMLGPXFc')])),
+        Transition.simple('triste', animal)
     ],
     [
-        lambda bot: bot.send_message(id_test, 'https://twitter.com/AL0SA/status/1171093235466457089')
+        lambda bot: ''
     ])
 
 

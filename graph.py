@@ -38,7 +38,7 @@ class Node:
         if not self.transitions:
             return None
 
-        bot.send_message()
+        #bot.send_message()
         res = input(self.question)
 
         # Si el nodo es interno
