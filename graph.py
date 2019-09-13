@@ -2,6 +2,7 @@ def run_actions(actions, *args):
     for action in actions:
         action(*args)
 
+
 class Transition:
     def __init__ (self, answer, condition, node_to_go, actions):
         self.answer = answer
@@ -19,7 +20,6 @@ class Transition:
         node.actions = actions
         return node
         
-pass
 
 class Node:
     def __init__ (self, question, transitions, actions):
@@ -31,13 +31,11 @@ class Node:
     def leaf (cls, actions):
         return cls(None, None, actions)
 
-    def act(self, bot):
-        for action in self.actions:
-            action(bot)
+
 
     def visit(self, bot):
 
-        self.act(bot)
+        run_actions(self.actions, bot)
 
         # Si el nodo es hoja 
         if not self.transitions:
@@ -51,6 +49,7 @@ class Node:
             print('checking ' + tt.answer)
 
             if(tt.condition(res)):
+                run_actions(tt.actions, bot)
                 print('it is '+ tt.answer)
                 return tt.node_to_go
 
