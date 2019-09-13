@@ -2,14 +2,14 @@ from graph import Node, Transition
 from countries import countries
 from animal import animal 
 from config import id_test
-
+from disco import disco
 
 
 
 act_node =  Node(
     '¿Estás feliz o triste?', 
     [
-        Transition.simple('feliz', Node.leaf([lambda bot:  bot.send_message(id_test, 'https://www.youtube.com/watch?v=xdhoMLGPXFc')])),
+        Transition.simple('feliz', disco),
         Transition.simple('triste', animal)
     ],
     [
