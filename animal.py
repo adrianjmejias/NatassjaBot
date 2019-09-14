@@ -1,19 +1,23 @@
 from graph import Node, Transition
 from config import id_test
+from disco import disco
+from luz import luz
+from util import asset_path
 
-
-node_test =  Node.leaf([lambda bot: bot.send_message(id_test, 'you moved to a test node')])
+node_test = ()
 
 animal = Node('Entonces sal a pasear. Prefieres encontrarte un…', 
     [
-        Transition.simple('Perro', Node.leaf([lambda bot: bot.send_audio(id_test, open('./Audio1.mp3', 'rb'), '')])),
-        Transition.simple('Gato', Node.leaf([lambda bot: bot.send_audio(id_test, open('./Audio2.mp3', 'rb'), '')])),
-        Transition.with_actions('test', node_test,
-            [lambda bot: bot.send_message(id_test, 'this is shown as a Transition\'s action')]
-        )
+       # no se envían audios
+       # Transition.with_actions('Perro', luz,
+            #[lambda bot: bot.send_audio(id_test, open('./Audio1.mp3', 'rb'))]),
+       # Transition.with_actions('Gato', luz,
+            #[lambda bot: bot.send_audio(id_test, open('./Audio2.mp3', 'rb'))]),
+        Transition.with_actions('Perro', luz,
+            [lambda bot: bot.send_message(id_test, 'perro')]),
+        Transition.with_actions('Gato', luz,
+            [lambda bot: bot.send_message(id_test, 'gato')])
     ],
     [
 
     ])
-
-
