@@ -1,4 +1,15 @@
 from util import generate_buttons, run_actions
+from config import id_test
+from telebot import types
+
+def game_end(bot):
+
+    markup = types.ReplyKeyboardMarkup()
+    markup.add(types.KeyboardButton('/start'))
+    bot.send_message(id_test, 'Se acabo el beta', reply_markup=markup)
+
+
+
 
 class Transition:
     def __init__ (self, answer, condition, node_to_go, actions):
@@ -9,7 +20,7 @@ class Transition:
 
     @classmethod
     def simple (cls, name, node_to_go):
-        return cls(name, lambda _name: _name == name, node_to_go,[])
+        return cls(name, lambda _name: _name == name, node_to_go, [])
 
     @classmethod
     def with_actions (cls, name, node_to_go, actions):
@@ -26,7 +37,9 @@ class Node:
 
     @classmethod
     def leaf (cls, actions):
-        return cls(None, None, actions)
+        node = cls(None, None, actions)
+        node.actions.append(game_end)
+        return node
 
 
 
