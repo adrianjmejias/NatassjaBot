@@ -1,40 +1,36 @@
 
 # https://github.com/eternnoir/pyTelegramBotAPI
 
-from main import act_node
+from main import init_node
 import telebot
 token = "876288218:AAGwZhJQw38ppbnsZxG5Ik7gSM6_Buf4HHU"
 bot = telebot.TeleBot(token)
 
-
+act_node = init_node
 @bot.message_handler(commands=['start'])
 def start(message):
-    # print(message)
-    # print(message.chat.username)
+    global act_node
 
-    # TODO: SET WELCOME MESSAGE
-    msg =   "WELCOME MESSÁGE"
-    bot.reply_to(message,msg)
+
+    print(message)
+
+    act_node.send_query(bot, message.chat.id)
     pass
-
+    
 
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
+    global act_node
+    act_node = act_node.get_reply(bot, message.chat.id, message.text)
+    act_node.send_query(bot, message.chat.id)
 
-    print(message)
-    print(message.from_user)
-    # bot.forward_message(id_adri,message.from_user.id, message.text)
-    bot.reply_to(message, message.text)
-
-#id_adri = 392991435
-id_alosa = 388964408
 
 # bot.send_photo(id_alosa, open('./doggy.jpg', 'rb'), 'tiene un sombrerito mrc')
 
 
-while act_node:
-    act_node = act_node.visit(bot)
+# while act_node:
+#     act_node = act_node.visit(bot)
 
 
 

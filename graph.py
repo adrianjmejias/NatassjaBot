@@ -1,7 +1,4 @@
-def run_actions(actions, *args):
-    for action in actions:
-        action(*args)
-
+from util import generate_buttons, run_actions
 
 class Transition:
     def __init__ (self, answer, condition, node_to_go, actions):
@@ -33,7 +30,7 @@ class Node:
 
 
 
-    def visit(self, bot):
+    def send_query(self, bot, id):
 
         run_actions(self.actions, bot)
 
@@ -41,8 +38,13 @@ class Node:
         if not self.transitions:
             return None
 
-        #bot.send_message()
-        res = input(self.question)
+        bot.send_message(id, self.question, reply_markup=generate_buttons(self.transitions))
+
+    def get_reply(self, bot, id, text):
+        res = text
+
+        if not self.transitions:
+            return None
 
         # Si el nodo es interno
         for tt in self.transitions:
@@ -52,5 +54,5 @@ class Node:
                 run_actions(tt.actions, bot)
                 print('it is '+ tt.answer)
                 return tt.node_to_go
-
+    
         return self

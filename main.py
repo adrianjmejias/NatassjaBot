@@ -6,11 +6,11 @@ from disco import disco
 
 
 
-act_node =  Node(
+init_node = Node(
     '¿Estás feliz o triste?', 
     [
-        Transition.simple('feliz', disco),
-        Transition.simple('triste', animal)
+        Transition.simple('Feliz', disco),
+        Transition.simple('Triste', animal)
     ],
     [
         lambda bot: ''
