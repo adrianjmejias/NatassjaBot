@@ -12,8 +12,8 @@ def start(message):
     global act_node
 
 
-    print(message)
-
+    # print(message)
+    act_node = init_node
     act_node.send_query(bot, message.chat.id)
     pass
     
