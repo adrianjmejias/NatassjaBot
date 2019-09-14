@@ -6,7 +6,11 @@ luz = Node('¿Tienes luz?',
     [
         #VIDEO NATASSJA TQM
         # Transition.simple('No', Node.leaf([lambda bot: bot.send_message(id_test, 'ok')])),
-        Transition.with_actions('Sí', viaje, []),
+        Transition.with_actions('Sí', viaje, []
+        ),
+        Transition.simple('No',Node.leaf(
+            [lambda bot: bot.send_message(id_test, 'https://www.youtube.com/watch?v=zf4buOHOb-c')])
+        )
     ],
     [
         
