@@ -6,10 +6,10 @@ from perrito import perrito
 genero = Node('¿Qué género quieres escuchar mientras te arreglas?', 
     [
         Transition.with_actions('Reggaetón', perrito,
-            ([lambda bot: bot.send_message(id_test, '')])
+            ([lambda bot: bot.send_message(id_test, 'not implemented yet')])
         ),
         Transition.with_actions('Hippie', perrito,
-            ([lambda bot: bot.send_message(id_test, '')])
+            ([lambda bot: bot.send_message(id_test, 'not implemented yet')])
         ),
         Transition.with_actions('Funk', perrito,
             ([lambda bot: bot.send_message(id_test, 'https://www.youtube.com/watch?v=zf4buOHOb-c')])
