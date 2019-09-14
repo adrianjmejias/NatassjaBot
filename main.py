@@ -4,19 +4,26 @@ from config import id_test
 from disco import disco
 
 
-
-init_node = Node(
+normal_flow = Node(
     '¿Estás feliz o triste?', 
     [
         Transition.simple('Feliz', disco),
         Transition.simple('Triste', animal)
     ],
     [
-        lambda bot: ''
     ])
 
 
-# if __name__ == "__main__":
-#     while act_node:
-#         act_node = act_node.visit()
-#     pass
+password_node = Node(
+    'Solo la churra pasa, ingresa la contraseña', 
+    [
+        Transition(
+            '', 
+            lambda text: text == 'churra123',
+            normal_flow,
+            []
+        )
+    ],
+    [])
+
+init_node = normal_flow
