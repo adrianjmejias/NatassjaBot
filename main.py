@@ -1,5 +1,4 @@
 from graph import Node, Transition
-from countries import countries
 from animal import animal 
 from config import id_test
 from disco import disco
