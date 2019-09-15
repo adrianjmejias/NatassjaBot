@@ -11,19 +11,22 @@ normal_flow = Node(
         Transition.simple('Triste', animal)
     ],
     [
+        
     ])
 
 
 password_node = Node(
-    'Solo la churra pasa, ingresa la contraseña', 
+    'Solo la churra pasa. Ingresa la contraseña', 
     [
         Transition(
             '', 
-            lambda text: text == 'churra123',
+            lambda text: text == 'churra.21',
             normal_flow,
             []
         )
     ],
-    [])
+    [
+   
+    ])
 
 init_node = normal_flow

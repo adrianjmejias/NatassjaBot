@@ -6,7 +6,7 @@ def game_end(bot):
 
     markup = types.ReplyKeyboardMarkup()
     markup.add(types.KeyboardButton('/start'))
-    bot.send_message(id_test, 'Se acabo el beta', reply_markup=markup)
+    bot.send_message(id_test, '¡Vuelve cuando quieras!', reply_markup=markup)
 
 
 

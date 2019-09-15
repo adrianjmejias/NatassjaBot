@@ -51,4 +51,4 @@ types= telebot.types
 # bot.send_video(id_alosa, video, 'muack')
 
 print("bot listening")
-bot.polling(none_stop=False, interval=0, timeout=500)
+bot.polling(none_stop=False, interval=0, timeout=1000)
