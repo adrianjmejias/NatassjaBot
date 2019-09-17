@@ -1,5 +1,5 @@
 from graph import Node, Transition
-from config import id_test
+
 from util import asset_path
 
 signo = Node('En la disco conoces a alguien. ¿Qué signo te gustaría que fuera?', 
@@ -15,7 +15,7 @@ signo = Node('En la disco conoces a alguien. ¿Qué signo te gustaría que fuera
 cancer = Node('Te ibas con esa persona pero se quedó llorando cuando escuchó La canción, así que llamaste a un taxi. Al llegar a tu casa te consigues un regalo:', 
     [
         Transition.simple('Abrir regalo', Node.leaf(
-            [lambda bot: bot.send_message(id_test, 'https://www.youtube.com/watch?v=Uqg4Y6N53k0&')])
+            [lambda bot, id_test: bot.send_message(id_test, 'https://www.youtube.com/watch?v=Uqg4Y6N53k0&')])
         ),
     ],
     [
@@ -25,7 +25,7 @@ cancer = Node('Te ibas con esa persona pero se quedó llorando cuando escuchó L
 leo = Node('Te ofreció la cola y te llevó hasta tu casa en un carro último modelo. Al llegar a tu casa te consigues un regalo:', 
     [
         Transition.simple('Abrir regalo', Node.leaf(
-            [lambda bot: bot.send_message(id_test, 'https://www.youtube.com/watch?v=Uqg4Y6N53k0&')])
+            [lambda bot, id_test: bot.send_message(id_test, 'https://www.youtube.com/watch?v=Uqg4Y6N53k0&')])
         ),
     ],
     [
@@ -35,7 +35,7 @@ leo = Node('Te ofreció la cola y te llevó hasta tu casa en un carro último mo
 libra = Node('Te ofreció la cola pero después te dijo que no estaba seguro si podía llevarte. Te fuiste con alguien virgo. Al llegar a tu casa te consigues un regalo:',
     [
         Transition.simple('Abrir regalo', Node.leaf(
-            [lambda bot: bot.send_message(id_test, 'https://www.youtube.com/watch?v=Uqg4Y6N53k0&')])
+            [lambda bot, id_test: bot.send_message(id_test, 'https://www.youtube.com/watch?v=Uqg4Y6N53k0&')])
         ),
     ],
     [
@@ -44,13 +44,13 @@ libra = Node('Te ofreció la cola pero después te dijo que no estaba seguro si 
 
 signo.transitions = [
         Transition.with_actions('Cáncer', cancer,  
-            [lambda bot: bot.send_document(id_test, open(asset_path('File.pdf'), 'rb'), '')]
+            [lambda bot, id_test: bot.send_document(id_test, open(asset_path('File.pdf'), 'rb'), '')]
         ),  
         Transition.with_actions('Leo', leo, 
-            [lambda bot: bot.send_photo(id_test, open(asset_path('juj.jpg'), 'rb'), '')]
+            [lambda bot, id_test: bot.send_photo(id_test, open(asset_path('juj.jpg'), 'rb'), '')]
         ),  
         Transition.with_actions('Libra', libra, 
-            [lambda bot: bot.send_sticker(id_test, open(asset_path('cachapa.webp'), 'rb'), '')]
+            [lambda bot, id_test: bot.send_sticker(id_test, open(asset_path('cachapa.webp'), 'rb'), '')]
         ),
     ]   
 

@@ -1,8 +1,8 @@
 from util import generate_buttons, run_actions
-from config import id_test
+
 from telebot import types
 
-def game_end(bot):
+def game_end(bot, id_test):
 
     markup = types.ReplyKeyboardMarkup()
     markup.add(types.KeyboardButton('/start'))
@@ -45,7 +45,7 @@ class Node:
 
     def send_query(self, bot, id):
 
-        run_actions(self.actions, bot)
+        run_actions(self.actions, bot, id)
 
         # Si el nodo es hoja 
         if not self.transitions:
@@ -63,7 +63,7 @@ class Node:
         for tt in self.transitions:
 
             if(tt.condition(res)):
-                run_actions(tt.actions, bot)
+                run_actions(tt.actions, bot, id)
                 return tt.node_to_go
     
         return self
