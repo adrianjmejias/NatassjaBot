@@ -29,4 +29,4 @@ password_node = Node(
    
     ])
 
-init_node = normal_flow
+init_node = password_node
