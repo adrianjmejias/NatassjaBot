@@ -61,11 +61,9 @@ class Node:
 
         # Si el nodo es interno
         for tt in self.transitions:
-            print('checking ' + tt.answer)
 
             if(tt.condition(res)):
                 run_actions(tt.actions, bot)
-                print('it is '+ tt.answer)
                 return tt.node_to_go
     
         return self
