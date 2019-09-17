@@ -8,11 +8,10 @@ luz = Node('¿Tienes luz?',
         # Transition.simple('No', Node.leaf([lambda bot: bot.send_message(id_test, 'ok')])),
         Transition.with_actions('Sí', viaje, []
         ),
-        Transition.simple('No',Node.leaf(
-            [lambda bot: bot.send_message(id_test, 'https://www.youtube.com/watch?v=zf4buOHOb-c')])
+        Transition.simple('No', Node.leaf(
+            [lambda bot: bot.send_message(id_test, 'https://www.youtube.com/watch?v=pX6U8FNLozo')])
         )
     ],
     [
         
     ])
-    

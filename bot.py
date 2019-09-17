@@ -26,7 +26,7 @@ def echo_all(message):
     act_node.send_query(bot, message.chat.id)
 
 
-# bot.send_photo(id_alosa, open('./doggy.jpg', 'rb'), 'tiene un sombrerito mrc')
+#bot.send_photo(id_alosa, open('./doggy.jpg', 'rb'), 'tiene un sombrerito mrc')
 
 
 # while act_node:
